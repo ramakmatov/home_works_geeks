@@ -1,63 +1,65 @@
+// Акматов Рамил F-27
+//ДЗ 3
 
-//HW1 
+//ДЗ 1. Температура 
 
-var data = function(getDataType) {
-  return console.log(typeof getDataType)
-}
+var temperatures = [25, 12, -2, 39, 0, 14, -10];
 
-data('Hello World!')
-data(false)
-data(42)
+for (var i = 0; i < temperatures.length; i++) {
+  var temperature = temperatures[i];
+  var feeling;
 
-//HW2
-
-function calculate(num1, operator, num2) {
-  var result;
-
-  if (operator === '+') {
-    result = num1 + num2;
-  } else if (operator === '-') {
-    result = num1 - num2;
-  } else if (operator === '*') {
-    result = num1 * num2;
-  } else if (operator === '/') {
-    result = num1 / num2;
+  if (temperature >= 33) {
+    feeling = "Жарко";
+  } else if (temperature >= 26 && temperature <= 32) {
+    feeling = "Тепло";
+  } else if (temperature >= 21 && temperature <= 25) {
+    feeling = "Облачно";
+  } else if (temperature >= 11 && temperature <= 20) {
+    feeling = "Прохладно";
+  } else if (temperature >= 0 && temperature <= 10) {
+    feeling = "Холодно";
+  } else if (temperature >= -10 && temperature < 0) {
+    feeling = "Очень холодно";
   } else {
-    console.log('Такой оператор нет!');
-    return;
+    feeling = "Морозно";
   }
 
-  console.log(result);
+  console.log("Температура: " + temperature + "°C, ощущение: " + feeling);
 }
 
-calculate(40, '+', 2);
-calculate(52, '-', 12);
-calculate(30, '*', 3);
-calculate(23, '/', 10);
 
-//HW3
+//ДЗ 2. Сколько платежных карт
 
-function getPositionArrayElement(element, array) {
-  var start = 0;
-  var end = array.length - 1;
+var cardNumbers = ["46782346", "45781218", "79874568", "12157845", "36151845", "41250895", "41201961"];
+var visaCount = 0;
 
-  while (start <= end) {
-    var mid = Math.floor((start + end) / 2);
-
-    if (array[mid] === element) {
-      return mid;
-    } else if (array[mid] < element) {
-      start = mid + 1;
-    } else {
-      end = mid - 1;
-    }
+for (var i = 0; i < cardNumbers.length; i++) {
+  if (cardNumbers[i].startsWith("4")) {
+    visaCount++;
   }
-
-  return -1;
 }
 
-var myArray = [1, 2, 4, 5, 7];
-var element = 5;
-var position = getPositionArrayElement(element, myArray);
-console.log(position)
+console.log("Карт VISA " + visaCount + " из " + cardNumbers.length + ".");
+
+
+//ДЗ 3. ИНН клиента
+
+var innList = ["12102199501457", "2220219950151", "02102199501457"];
+var individualInnList = [];
+var legalInnList = [];
+
+for (var i = 0; i < innList.length; i++) {
+  var inn = innList[i];
+  
+  if (inn.startsWith("1") || inn.startsWith("2")) {
+    individualInnList.push(inn);
+  } else if (inn.startsWith("0")) {
+    legalInnList.push(inn);
+  }
+}
+
+console.log("Массив физических лиц: ", individualInnList);
+console.log("Массив юридических лиц: ", legalInnList);
+
 
