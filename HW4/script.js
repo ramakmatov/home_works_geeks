@@ -1,81 +1,28 @@
-//ДЗ-1
+// Акматов Рамил ДЗ 4. 
 
-// var counterElement = document.getElementById('counter');
-// var incrementBtn = document.querySelector('#incrementBtn');
-// var decrementBtn = document.querySelector('#decrementBtn');
+//ДЗ-1 Переворот
 
-// var counterValue = 0;
-
-// function updateCounter() {
-//   counterElement.textContent = counterValue;
-
-//   counterElement.classList.remove('green', 'red');
-//   if (counterValue > 0) {
-//     counterElement.classList.add('green');
-//   } else if (counterValue < 0) {
-//     counterElement.classList.add('red');
-//   }
-// }
-// function increment() {
-//   counterValue++;
-//   updateCounter();
-// }
-// function decrement() {
-//   if (counterValue > 0) {
-//     counterValue--;
-//     updateCounter();
-//   }
-// }
-// incrementBtn.addEventListener('click', increment);
-// decrementBtn.addEventListener('click', decrement);
-
-//ДЗ-2
-
-// var textElements = document.getElementsByClassName('text');
-// var btnElements = document.getElementsByClassName('btn');
-
-// function updateText() {
-//   var inputValue = prompt('Введите текст');
-//   if (inputValue !== null) {
-//     Array.from(textElements).forEach(function(element) {
-//       element.textContent = inputValue;
-//     });
-//   }
-// }
-
-// function handleClick() {
-//   updateText();
-// }
-
-// Array.from(btnElements).forEach(function(element) {
-//   element.addEventListener('click', handleClick);
-// });
-
-//ДЗ-3
-
-var lights = document.getElementsByClassName('light');
-
-function updateTrafficLight(color) {
-  Array.from(lights).forEach(function(light) {
-    light.classList.remove('red', 'yellow', 'green');
-  });
-
-  if (color === 'Красный') {
-    lights[0].classList.add('red');
-    alert('STOP');
-  } else if (color === 'Зеленый') {
-    lights[2].classList.add('green');
-    alert('GO');
+function myReverse(str) {
+  var reversedStr = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    reversedStr += str.charAt(i);
   }
+  return reversedStr;
 }
 
-function handleClick() {
-  var inputValue = prompt('Введите цвет светофора: "Красный" или "Зеленый"');
-  if (inputValue !== null) {
-    updateTrafficLight(inputValue);
+var inputString = "123456789";
+var reversedString = myReverse(inputString);
+console.log(reversedString);
+
+//ДЗ-2 Полиндром
+
+function checkPalindrome(str) {
+  var reversedStr = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    reversedStr += str.charAt(i);
   }
+  return str === reversedStr;
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  handleClick();
-});
+console.log(checkPalindrome("потоп"));    // true
+console.log(checkPalindrome("привет"));   // false
