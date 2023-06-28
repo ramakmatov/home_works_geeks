@@ -1,19 +1,23 @@
-.project {
-  margin-bottom: 10px;
-}
-.delete-button {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  cursor: pointer;
+.counter {
+  font-size: 24px;
+  text-align: center;
 }
 
-.todo {
-  margin-bottom: 10px;
+.counter-positive {
+  color: green;
 }
-.edit-button {
-  background-color: yellow;
-  color: black;
-  padding: 5px 10px;
-  cursor: pointer;
+
+.counter-zero {
+  color: gray;
+}
+
+.counter-negative {
+  color: red;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 5px;
 }
