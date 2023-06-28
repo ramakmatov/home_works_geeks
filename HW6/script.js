@@ -1,33 +1,21 @@
-    // ДЗ 1
+//Акматов Рамил.
+//ДЗ6
 
-    // const inputField = document.getElementById('inputField');
-    // const reverseButton = document.getElementById('reverseButton');
-    // const output = document.getElementById('output');
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    // reverseButton.addEventListener('click', () => {
-    //   const inputValue = inputField.value;
-    //   if (inputValue.trim() !== '') {
-    //     const reversedValue = [...inputValue].reverse().join('');
-    //     output.textContent = reversedValue;
-    //   } else {
-    //     output.textContent = '';
-    //   }
-    // });
+function generateNumbers() {
+  var numbersContainer = document.getElementById('numbers');
+  numbersContainer.innerHTML = '';
 
-    // ДЗ 2 Дороботка
-    
-    // const inputField = document.getElementById('inputField');
-    // const reverseButton = document.getElementById('reverseButton');
-    // const output = document.getElementById('output');
-
-    // reverseButton.addEventListener('click', () => {
-    //   const inputValues = inputField.value.split(',');
-    //   output.innerHTML = '';
-    //   inputValues.forEach(value => {
-    //     if (value.trim() !== '') {
-    //       const listItem = document.createElement('li');
-    //       listItem.textContent = [...value].reverse().join('');
-    //       output.appendChild(listItem);
-    //     }
-    //   });
-    // });
+  for (var i = 0; i < 6; i++) {
+    var number = getRandomInt(1, 99);
+    var numberElement = document.createElement('div');
+    numberElement.className = 'number';
+    numberElement.textContent = number;
+    numbersContainer.appendChild(numberElement);
+  }
+}
