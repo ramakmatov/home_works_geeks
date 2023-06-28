@@ -1,0 +1,24 @@
+.counter {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .counter-positive {
+    color: green;
+  }
+  
+  .counter-zero {
+    color: gray;
+  }
+  
+  .counter-negative {
+    color: red;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+  }
+  
